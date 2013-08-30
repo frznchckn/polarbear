@@ -1,0 +1,48 @@
+[*]
+[*] GTKWave Analyzer v3.3.34 (w)1999-2012 BSI
+[*] Fri Aug 23 03:14:23 2013
+[*]
+[dumpfile] "/home/rfriesen/rlfstuff/hw/cores/uart/sim/rtl/uart_tb.ghw"
+[dumpfile_mtime] "Fri Aug 23 03:12:53 2013"
+[dumpfile_size] 710331
+[savefile] "/home/rfriesen/rlfstuff/hw/cores/uart/sim/rtl/uart_tb.sav"
+[timestart] 0
+[size] 1680 1024
+[pos] -3 -47
+*-35.834229 288000000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.uart_tb.
+[treeopen] top.uart_tb.uart_0.
+[sst_width] 214
+[signals_width] 179
+[sst_expanded] 1
+[sst_vpaned_height] 301
+@28
+top.uart_tb.uart_0.din_d2
+top.uart_tb.uart_0.din_d1
+top.uart_tb.uart_0.din_d0
+@29
+top.uart_tb.uart_0.parity
+@28
+top.uart_tb.uart_0.cs
+@24
+#{top.uart_tb.uart_0.rxcnt[2:0]} top.uart_tb.uart_0.rxcnt[2] top.uart_tb.uart_0.rxcnt[1] top.uart_tb.uart_0.rxcnt[0]
+#{top.uart_tb.uart_0.clk16cnt[3:0]} top.uart_tb.uart_0.clk16cnt[3] top.uart_tb.uart_0.clk16cnt[2] top.uart_tb.uart_0.clk16cnt[1] top.uart_tb.uart_0.clk16cnt[0]
+@28
+top.uart_tb.uart_0.clk16pulse
+top.uart_tb.uart_0.stoperr
+top.uart_tb.uart_0.parerr
+top.uart_tb.uart_0.doutvalid
+top.uart_tb.uart_0.din
+top.uart_tb.uart_0.rst
+top.uart_tb.uart_0.clk
+@22
+#{top.uart_tb.dout[7:0]} top.uart_tb.dout[7] top.uart_tb.dout[6] top.uart_tb.dout[5] top.uart_tb.dout[4] top.uart_tb.dout[3] top.uart_tb.dout[2] top.uart_tb.dout[1] top.uart_tb.dout[0]
+#{top.uart_tb.byte[7:0]} top.uart_tb.byte[7] top.uart_tb.byte[6] top.uart_tb.byte[5] top.uart_tb.byte[4] top.uart_tb.byte[3] top.uart_tb.byte[2] top.uart_tb.byte[1] top.uart_tb.byte[0]
+@24
+#{top.uart_tb.uart_0.clkcntr[15:0]} top.uart_tb.uart_0.clkcntr[15] top.uart_tb.uart_0.clkcntr[14] top.uart_tb.uart_0.clkcntr[13] top.uart_tb.uart_0.clkcntr[12] top.uart_tb.uart_0.clkcntr[11] top.uart_tb.uart_0.clkcntr[10] top.uart_tb.uart_0.clkcntr[9] top.uart_tb.uart_0.clkcntr[8] top.uart_tb.uart_0.clkcntr[7] top.uart_tb.uart_0.clkcntr[6] top.uart_tb.uart_0.clkcntr[5] top.uart_tb.uart_0.clkcntr[4] top.uart_tb.uart_0.clkcntr[3] top.uart_tb.uart_0.clkcntr[2] top.uart_tb.uart_0.clkcntr[1] top.uart_tb.uart_0.clkcntr[0]
+@28
+top.uart_tb.uart_tx
+top.uart_tb.uart_0.doutvalid
+[pattern_trace] 1
+[pattern_trace] 0
