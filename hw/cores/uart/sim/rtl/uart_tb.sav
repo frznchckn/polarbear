@@ -1,30 +1,27 @@
 [*]
 [*] GTKWave Analyzer v3.3.34 (w)1999-2012 BSI
-[*] Fri Aug 23 03:14:23 2013
+[*] Sat Sep  7 17:42:14 2013
 [*]
-[dumpfile] "/home/rfriesen/rlfstuff/hw/cores/uart/sim/rtl/uart_tb.ghw"
-[dumpfile_mtime] "Fri Aug 23 03:12:53 2013"
-[dumpfile_size] 710331
-[savefile] "/home/rfriesen/rlfstuff/hw/cores/uart/sim/rtl/uart_tb.sav"
+[dumpfile] "/home/rfriesen/tmp/polarbear/hw/cores/uart/sim/rtl/uart_tb.ghw"
+[dumpfile_mtime] "Sat Sep  7 17:37:32 2013"
+[dumpfile_size] 1025010
+[savefile] "/home/rfriesen/tmp/polarbear/hw/cores/uart/sim/rtl/uart_tb.sav"
 [timestart] 0
 [size] 1680 1024
-[pos] -3 -47
-*-35.834229 288000000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[pos] 2559 -25
+*-35.910606 291445000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] top.
 [treeopen] top.uart_tb.
 [treeopen] top.uart_tb.uart_0.
-[sst_width] 214
-[signals_width] 179
+[sst_width] 215
+[signals_width] 199
 [sst_expanded] 1
-[sst_vpaned_height] 301
+[sst_vpaned_height] 420
 @28
 top.uart_tb.uart_0.din_d2
 top.uart_tb.uart_0.din_d1
 top.uart_tb.uart_0.din_d0
-@29
 top.uart_tb.uart_0.parity
-@28
-top.uart_tb.uart_0.cs
 @24
 #{top.uart_tb.uart_0.rxcnt[2:0]} top.uart_tb.uart_0.rxcnt[2] top.uart_tb.uart_0.rxcnt[1] top.uart_tb.uart_0.rxcnt[0]
 #{top.uart_tb.uart_0.clk16cnt[3:0]} top.uart_tb.uart_0.clk16cnt[3] top.uart_tb.uart_0.clk16cnt[2] top.uart_tb.uart_0.clk16cnt[1] top.uart_tb.uart_0.clk16cnt[0]
@@ -32,8 +29,6 @@ top.uart_tb.uart_0.cs
 top.uart_tb.uart_0.clk16pulse
 top.uart_tb.uart_0.stoperr
 top.uart_tb.uart_0.parerr
-top.uart_tb.uart_0.doutvalid
-top.uart_tb.uart_0.din
 top.uart_tb.uart_0.rst
 top.uart_tb.uart_0.clk
 @22
@@ -43,6 +38,26 @@ top.uart_tb.uart_0.clk
 #{top.uart_tb.uart_0.clkcntr[15:0]} top.uart_tb.uart_0.clkcntr[15] top.uart_tb.uart_0.clkcntr[14] top.uart_tb.uart_0.clkcntr[13] top.uart_tb.uart_0.clkcntr[12] top.uart_tb.uart_0.clkcntr[11] top.uart_tb.uart_0.clkcntr[10] top.uart_tb.uart_0.clkcntr[9] top.uart_tb.uart_0.clkcntr[8] top.uart_tb.uart_0.clkcntr[7] top.uart_tb.uart_0.clkcntr[6] top.uart_tb.uart_0.clkcntr[5] top.uart_tb.uart_0.clkcntr[4] top.uart_tb.uart_0.clkcntr[3] top.uart_tb.uart_0.clkcntr[2] top.uart_tb.uart_0.clkcntr[1] top.uart_tb.uart_0.clkcntr[0]
 @28
 top.uart_tb.uart_tx
-top.uart_tb.uart_0.doutvalid
+top.uart_tb.uart_0.rxcs
+@22
+#{top.uart_tb.uart_0.bytetx[7:0]} top.uart_tb.uart_0.bytetx[7] top.uart_tb.uart_0.bytetx[6] top.uart_tb.uart_0.bytetx[5] top.uart_tb.uart_0.bytetx[4] top.uart_tb.uart_0.bytetx[3] top.uart_tb.uart_0.bytetx[2] top.uart_tb.uart_0.bytetx[1] top.uart_tb.uart_0.bytetx[0]
+@28
+top.uart_tb.uart_0.bytetxvalid
+top.uart_tb.uart_0.txbusy_i
+@22
+#{top.uart_tb.uart_0.byterx[7:0]} top.uart_tb.uart_0.byterx[7] top.uart_tb.uart_0.byterx[6] top.uart_tb.uart_0.byterx[5] top.uart_tb.uart_0.byterx[4] top.uart_tb.uart_0.byterx[3] top.uart_tb.uart_0.byterx[2] top.uart_tb.uart_0.byterx[1] top.uart_tb.uart_0.byterx[0]
+@28
+top.uart_tb.uart_0.byterxvalid
+top.uart_tb.uart_0.byterxvalid_d1
+top.uart_tb.uart_0.txcs
+top.uart_tb.uart_0.bittx
+>92400000000
+top.uart_tb.uart_tx
+@24
+>0
+#{top.uart_tb.uart_0.txcnt[2:0]} top.uart_tb.uart_0.txcnt[2] top.uart_tb.uart_0.txcnt[1] top.uart_tb.uart_0.txcnt[0]
+@28
+#{top.uart_tb.uart_0.byterx_d1[7:0]} top.uart_tb.uart_0.byterx_d1[7] top.uart_tb.uart_0.byterx_d1[6] top.uart_tb.uart_0.byterx_d1[5] top.uart_tb.uart_0.byterx_d1[4] top.uart_tb.uart_0.byterx_d1[3] top.uart_tb.uart_0.byterx_d1[2] top.uart_tb.uart_0.byterx_d1[1] top.uart_tb.uart_0.byterx_d1[0]
+top.uart_tb.uart_0.clktxpulse
 [pattern_trace] 1
 [pattern_trace] 0

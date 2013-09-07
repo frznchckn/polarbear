@@ -16,44 +16,24 @@ end uart_tb;
 architecture tb of uart_tb is
 
   component uart is
-  generic(
-    SysClkRate  : integer := 50e6;
-    -- 9600 | 56400 | 115200
-    BaudRate    : integer := 115200; 
-    -- 1 | 2
-    NumStopBits : integer := 1;
-    -- true | false
-    UseParity   : boolean := true;
-    -- odd | even
-    ParityType  : std_ulogic := '1'
-  );
   port(
     Clk         : in std_ulogic;
     Rst         : in std_ulogic;
-    DIn         : in std_ulogic;
-    DOut        : out std_ulogic_vector(7 downto 0);
-    DOutValid   : out std_ulogic;
+    BaudRateGen : in std_ulogic_vector(19 downto 0);
+    NumStopBits : in std_ulogic_vector(1 downto 0);
+    UseParity   : in std_ulogic;
+    ParityType  : in std_ulogic;
+    -- rx
+    BitRx         : in std_ulogic;
+    ByteTx        : out std_ulogic_vector(7 downto 0);
+    ByteTxValid   : out std_ulogic;
     ParErr      : out std_ulogic;
-    StopErr     : out std_ulogic
-  );
-  end component;
-
-  component uart_rx is
-  generic(
-    NumDataBits : integer := 8;
-    NumStopBits : integer := 1;
-    UseParity   : boolean := true;
-    ParityType  : string  := "odd"
-  );
-  port(
-    Clk         : in std_ulogic;
-    Rst         : in std_ulogic;
-    Clk16       : in std_ulogic;
-    DIn         : in std_ulogic;
-    DOut        : out std_ulogic_vector(7 downto 0);
-    DoutValid   : out std_ulogic;
-    ParErr      : out std_ulogic;
-    StopErr     : out std_ulogic
+    StopErr     : out std_ulogic;
+    -- tx
+    ByteRx      : in std_ulogic_vector(7 downto 0);
+    ByteRxValid : in std_ulogic;
+    BitTx       : out std_ulogic;
+    TxBusy      : out std_ulogic
   );
   end component;
 
@@ -61,47 +41,38 @@ architecture tb of uart_tb is
   signal uart_tx : std_logic;
 
   signal clk : std_ulogic := '1';
---   signal clk16 : std_ulogic := '1';
   signal rst : std_ulogic := '1';
   signal dout : std_ulogic_vector(7 downto 0);
   signal doutValid : std_ulogic;
+  signal uartByteRx : std_ulogic_vector(7 downto 0);
+  signal uartByteRxValid : std_ulogic;
+  signal uartBitTx        : std_ulogic;
+  signal uartTxBusy : std_ulogic;
 
   signal test_done : std_ulogic := '0';
 
 begin
 
---   uart_rx_0 : uart_rx
---   port map (
---     Clk         => clk,
---     Rst         => rst,
---     Clk16       => clk16,
---     DIn         => uart_tx,
---     DOut        => dout,
---     DoutValid   => doutValid,
---     ParErr      => open,
---     StopErr     => open
---   );
-
   uart_0 : uart
-  generic map(
-    SysClkRate  => 100e6,
-    -- 9600 | 56400 | 115200
-    BaudRate    => 115200,
-    -- 1 | 2
-    NumStopBits => 1,
-    -- true | false
-    UseParity   => true,
-    -- odd | even
-    ParityType  => '1' 
-  )
   port map (
     Clk         => clk,
     Rst         => rst,
-    DIn         => uart_tx,
-    DOut        => dout,
-    DoutValid   => doutValid,
+    BaudRateGen => X"00036",
+    NumStopBits => "01",
+    UseParity   => '1',
+    ParityType  => '1',
+    BitRx       => uart_tx,
+--     ByteTx      => dout,
+--     ByteTxValid => doutValid,
+    ByteTx      => uartByteRx,
+    ByteTxValid => uartByteRxValid,
     ParErr      => open,
-    StopErr     => open
+    StopErr     => open,
+    -- tx
+    ByteRx      => uartByteRx,
+    ByteRxValid => uartByteRxValid,
+    BitTx       => uartBitTx,
+    TxBusy      => uartTxBusy
   );
 
   P_CLK : process
@@ -133,7 +104,7 @@ begin
     uart_tx_byte("odd", 1, x"FF", uart_tx);
     uart_tx_byte("odd", 1, x"00", uart_tx);
     uart_tx_byte("odd", 1, x"15", uart_tx);
-    wait for 10 us;
+    wait for 150 us;
     test_done <= '1';
     wait;
   end process P_STIMULUS;
